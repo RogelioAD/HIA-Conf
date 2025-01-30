@@ -1,46 +1,61 @@
-/* COLORS */
-/* background-color: #faf0ca; */
-/* background-color: #195083; */
-/* background-color: #ee964b; */
-/* background-color: #da4527; */
+/* ========= CSS Variables ========= */
+:root {
+  --color-primary: #da4527;
+  --color-secondary: #195083;
+  --color-cream: #faf0ca;
+  --color-black: #000000;
+  --color-white: #ffffff;
 
-/* ========= Scrollbar ========= */
+  --font-stack: "Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros,
+    FreeSans, "Nimbus Sans L", "Liberation Sans", Arimo, Helvetica, Arial,
+    sans-serif;
+
+  --border-standard: 2px solid var(--color-black);
+}
+
+/* ========= Base Styles ========= */
 .scrollbar::-webkit-scrollbar {
   display: none;
 }
 
-/* ========= Fonts ========= */
+/* ========= Typography ========= */
 .regularfont {
-  font-family: "Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros,
-    FreeSans, "Nimbus Sans L", "Liberation Sans", Arimo, Helvetica, Arial,
-    sans-serif;
+  font-family: var(--font-stack);
   font-weight: bold;
   font-size: 120%;
 }
 
 .thinfont {
-  font-family: "Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros,
-    FreeSans, "Nimbus Sans L", "Liberation Sans", Arimo, Helvetica, Arial,
-    sans-serif;
+  font-family: var(--font-stack);
   font-weight: lighter;
   font-size: 80%;
 }
 
-/* ========= Nav Bar ========= */
+.subheaderfont {
+  font-family: var(--font-stack);
+  font-weight: bold;
+  font-size: 100%;
+}
+
+.regularfontguest {
+  font-family: var(--font-stack);
+  font-weight: bold;
+  font-size: 800%;
+  letter-spacing: -0.12em;
+}
+
+/* ========= Navigation ========= */
 .navbar {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: black;
-  color: white;
+  background-color: var(--color-black);
+  color: var(--color-white);
   height: 6em;
 }
 
 .navbaroptions {
-  font-family: "Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros,
-    FreeSans, "Nimbus Sans L", "Liberation Sans", Arimo, Helvetica, Arial,
-    sans-serif;
+  font-family: var(--font-stack);
   font-weight: bold;
   font-size: 75%;
   text-align: justify;
@@ -56,369 +71,300 @@
   margin-right: 1em;
 }
 
-/* ========= Header ========= */
-.headerbackground {
-  /* Center Div */
-  display: flex;
-  justify-content: center; /* Horizontal centering */
-  align-items: center; /* Vertical centering */
-}
-
+/* ========= Header Section ========= */
 .header {
-  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-black);
   width: 100%;
   height: 30em;
   overflow: hidden;
   position: relative;
-
-  /* Center Div */
-  display: flex;
-  justify-content: center; /* Horizontal centering */
-  align-items: center; /* Vertical centering */
 }
 
-/* video in header */
 .videocontainer {
   width: 100%;
+  height: 30em;
   position: relative;
-  transform: scale(1);
+  overflow: hidden;
 }
 
-/* ========= Section2 below header ========= */
-.section2bg {
-  display: flex;
-  flex-direction: row;
-  background-color: brown;
-}
-
-.section2container {
-  display: flex;
-  justify-content: center; /* Horizontal centering */
-  align-items: center; /* Vertical centering */
-  flex-direction: row;
-  background-color: white;
+.videocontainer video {
   width: 100%;
+  height: 100%;
+  object-fit: fill;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(1.5);
 }
 
-.headertext {
+/* ========= Section 2 Layout ========= */
+.subheadercontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 26em;
+}
+
+/* Header Text Sections */
+.registersection {
   height: 100%;
-  /* background-color: #faf0ca; */
-  /* background-color: #195083; */
-  /* background-color: #ee964b; */
-  background-color: #da4527;
-  color: #faf0ca;
+  background-color: var(--color-primary);
+  color: var(--color-cream);
   width: 50%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.headertext1 {
-  /* background-color: rgb(78, 166, 255); */
+.registrationquadrantone {
   height: 50%;
   width: 70%;
   display: flex;
-  text-align: start;
-}
-.ht1div {
-  margin-left: 20px;
-  margin-top: 30px;
-  word-spacing: 1em;
 }
 
-.headertext2 {
-  /* background-color: rgb(255, 82, 169); */
+#alignleft {
+  text-align: start;
+}
+
+#alignright {
+  text-align: end;
+}
+
+#nomargin {
+  margin: 0;
+}
+
+.registrationquadranttwo {
   height: 50%;
   width: 30%;
   display: flex;
-  justify-content: end;
-  align-items: end;
+  justify-content: center;
+  align-items: center;
 }
 
 .headertext3 {
-  /* background-color: aquamarine; */
   height: 50%;
   width: 10%;
   display: flex;
-  justify-content: center; /* Horizontal centering */
-  align-items: center; /* Vertical centering */
+  justify-content: center;
+  align-items: center;
 }
 
-.headertext4 {
-  /* background-color: rgb(220, 255, 82); */
+.registrationquadrantthreeandfour {
   height: 50%;
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
+
 .ht4div1 {
-  margin-bottom: 10px;
-  margin-right: 20px;
-  text-align: end;
-  align-items: center;
-}
-.ht4div2 {
-  margin-left: 20px;
-  margin-bottom: 40px;
-  margin-right: 20px;
-  word-spacing: 1em;
+  margin: 0 20px 10px 0;
   text-align: end;
   align-items: center;
 }
 
-.headerimage {
+.faqquestions {
+  margin: 0 20px 40px 20px;
+  text-align: end;
+  align-items: center;
+}
+
+/* Header Image Section */
+.faqsection {
   background-image: url("../images/worship.png");
   background-size: cover;
   background-position: center;
-  height: 30em;
-  background-color: grey;
+  height: 100%;
+  background-color: var(--color-primary);
+  color: var(--color-cream);
   width: 50%;
-  overflow: hidden;
-  position: relative;
-  font-family: "Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros,
-    FreeSans, "Nimbus Sans L", "Liberation Sans", Arimo, Helvetica, Arial,
-    sans-serif;
-  font-weight: bold;
-  font-size: 75%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  color: #faf0ca;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.headerimage1 {
-  /* background-color: rgba(127, 255, 212, 0.277); */
+.faqquadrantone {
   height: 50%;
   width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .hi1divbutton {
   display: flex;
-  margin-top: 35px;
-  margin-left: 20px;
+  margin: 35px 0 0 20px;
 }
 
-.headerimage2 {
-  /* background-color: rgba(220, 255, 82, 0.238); */
+.faqquadranttwo {
   height: 50%;
   width: 50%;
 }
+
 .hi2faq {
-  margin-top: 30px;
-  margin-left: 20px;
-  margin-bottom: 40px;
-  margin-right: 20px;
+  margin: 30px 20px 40px 20px;
   text-align: end;
   align-items: center;
 }
 
-.headerimage3 {
-  /* background-color: rgba(78, 167, 255, 0.201); */
+.faqquadrantthreeandfour {
   height: 50%;
   width: 90%;
 }
+
 .hi3div1 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  margin-left: 20px;
+  margin: 20px 0 10px 20px;
   text-align: start;
   align-items: center;
 }
+
 .hi3div2 {
-  margin-left: 20px;
-  margin-bottom: 40px;
-  margin-left: 20px;
-  word-spacing: 1em;
+  margin: 0 0 40px 20px;
   text-align: start;
   align-items: center;
 }
 
 .headerimage4 {
-  /* background-color: rgba(255, 82, 169, 0.308); */
   height: 50%;
   width: 10%;
 }
 
-/* ========= Date Div ========= */
+/* ========= Date Section ========= */
 .datediv {
   height: 3em;
-  background-color: #ffffff;
-  border-top: 4px solid #000000;
-  border-bottom: 2px solid #000000;
+  background-color: var(--color-white);
+  border-top: 4px solid var(--color-black);
+  border-bottom: var(--border-standard);
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Horizontal centering */
-  align-items: center; /* Vertical centering */
+  justify-content: center;
+  align-items: center;
 }
 
-/* ========= stickers ========= */
+/* ========= Stickers ========= */
 .sticker {
   position: absolute;
   top: 10em;
   left: 2%;
 }
 
-/* ========= buttons ========= */
+/* ========= Links & Buttons ========= */
 .nodecoration {
   text-decoration: none;
   color: inherit;
 }
 
 .nodecorationunderline {
-  color: #da4527;
+  color: var(--color-primary);
+}
+
+/* Button Base Styles */
+.buttonblack,
+.buttonwhite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10em;
+  height: 3.6em;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 6px;
+  font-weight: bold;
+  font-family: inherit;
+  font-size: 15px;
+  transition: color 0.5s;
+  z-index: 1;
 }
 
 .buttonblack {
-  display: flex;
-  align-content: center;
-  text-align: center;
-  --color: #000000;
-  font-family: inherit;
-  display: inline-block;
-  width: 10em;
-  height: 3.6em;
-  margin: 0px 20px 40px 0px;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  border: 2px solid var(--color);
-  transition: color 0.5s;
-  z-index: 1;
-  font-size: 15px;
-  border-radius: 6px;
-  font-weight: bold;
-  color: var(--color);
-}
-
-.buttonblack:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  background: var(--color);
-  height: 150px;
-  width: 200px;
-  border-radius: 50%;
-}
-
-.buttonblack:hover {
-  color: #faf0ca;
-}
-
-.buttonblack:before {
-  top: 100%;
-  left: 100%;
-  transition: all 0.7s;
-}
-
-.buttonblack:hover:before {
-  top: -30px;
-  left: -30px;
-}
-
-.buttonblack:active:before {
-  background: #faf0ca;
-  transition: background 0s;
+  --button-color: var(--color-black);
+  border: 2px solid var(--button-color);
+  color: var(--button-color);
 }
 
 .buttonwhite {
-  display: flex;
-  align-content: center;
-  text-align: center;
-  --color: #faf0ca;
-  font-family: inherit;
-  display: inline-block;
-  width: 10em;
-  height: 3.6em;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  border: 2px solid var(--color);
-  transition: color 0.5s;
-  z-index: 1;
-  font-size: 15px;
-  border-radius: 6px;
-  font-weight: bold;
-  color: var(--color);
+  --button-color: var(--color-cream);
+  border: 2px solid var(--button-color);
+  color: var(--button-color);
 }
 
+.buttonblack:hover,
+.buttonwhite:hover {
+  color: var(--button-color);
+}
+
+.buttonblack:hover {
+  color: var(--color-cream);
+}
+.buttonwhite:hover {
+  color: var(--color-black);
+}
+
+.buttonblack:before,
 .buttonwhite:before {
   content: "";
   position: absolute;
   z-index: -1;
-  background: var(--color);
+  background: var(--button-color);
   height: 150px;
   width: 200px;
   border-radius: 50%;
-}
-
-.buttonwhite:hover {
-  color: #000000;
-}
-
-.buttonwhite:before {
   top: 100%;
   left: 100%;
   transition: all 0.7s;
 }
 
+.buttonblack:hover:before,
 .buttonwhite:hover:before {
   top: -30px;
   left: -30px;
 }
 
-.buttonwhite:active:before {
-  background: #ffffff;
-  transition: background 0s;
-}
-
-/* ========= Guest Speaker ========= */
-.speakerdivodd {
-  position: relative;
-  height: 2em;
-  border-top: 2px solid #000000;
-  border-bottom: 2px solid #000000;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-}
+/* ========= Guest Speaker Section ========= */
+.speakerdivodd,
 .speakerdiveven {
   position: relative;
   height: 2em;
-  border-top: 2px solid #000000;
-  border-bottom: 2px solid #000000;
+  border-top: var(--border-standard);
+  border-bottom: var(--border-standard);
   display: flex;
-  justify-content: end;
   align-items: center;
 }
 
-.regularfontguest {
-  font-family: "Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros,
-    FreeSans, "Nimbus Sans L", "Liberation Sans", Arimo, Helvetica, Arial,
-    sans-serif;
-  font-weight: bold;
-  font-size: 800%;
-  letter-spacing: -0.12em;
+.speakerdivodd {
+  justify-content: start;
+}
+.speakerdiveven {
+  justify-content: end;
 }
 
 .speakername {
   margin-inline: 0.3em;
 }
 
-.trapezoid1 {
-  position: absolute;
-  width: 80%;
-  height: 100%;
-  background-color: #195083;
-  clip-path: polygon(0% 0%, 50% 0%, 100% 100%, 0% 100%);
-  z-index: -1;
-  justify-content: left;
-}
-
+.trapezoid1,
 .trapezoid2 {
   position: absolute;
   width: 80%;
   height: 100%;
-  background-color: #195083;
-  clip-path: polygon(100% 0%, 50% 0%, 0% 100%, 100% 100%);
+  background-color: var(--color-secondary);
   z-index: -1;
-  justify-content: right;
+}
+
+.trapezoid1 {
+  clip-path: polygon(0% 0%, 50% 0%, 100% 100%, 0% 100%);
+}
+
+.trapezoid2 {
+  clip-path: polygon(100% 0%, 50% 0%, 0% 100%, 100% 100%);
 }

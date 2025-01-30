@@ -8,21 +8,21 @@ const HeaderVideo = () => (
   </video>
 );
 
-const HeaderText = () => (
-  <div className="headertext thinfont">
-    <div className="headertext1">
-      <p className="ht1div">
+const RegisterSection = () => (
+  <div className="registersection subheaderfont">
+    <div className="registrationquadrantone" id="alignleft">
+      <p>
         Join us for an incredible week encountering God’s presence. This event
-        is ticketed to enter and registration is required. You only pay a one-time fee
-        for the whole week!
+        is ticketed to enter and registration is required. You only pay a
+        one-time fee for the whole week!
       </p>
     </div>
-    <div className="headertext2">
+    <div className="registrationquadranttwo" id="alignright">
       <ActionButton to="/" text="REGISTER" />
     </div>
-    <div className="headertext4">
-      <h3 className="ht4div1 regularfont">LOW COST INITIATIVE</h3>
-      <p className="ht4div2">
+    <div className="registrationquadrantthreeandfour" id="alignright">
+      <h3 className="regularfont" id="nomargin">LOW COST INITIATIVE</h3>
+      <p>
         At Here I am Conference, we've implemented a low-cost initiative to
         ensure that everyone, regardless of their financial situation, can
         participate and experience the transformative power of Jesus. We
@@ -36,21 +36,21 @@ const HeaderText = () => (
 );
 
 const FAQSection = () => (
-  <div className="headerimage">
-    <div className="headerimage1">
+  <div className="faqsection subheaderfont">
+    <div className="faqquadrantone">
       <ActionButton to="/" text="FAQ" />
     </div>
-    <div className="headerimage2">
-      <div className="hi2faq">
+    <div className="faqquadranttwo">
+      <div className="faqquestions">
         <p>What time does the conference start?</p>
         <p>Will you live stream?</p>
         <p>Can I pay at the door?</p>
         <p>Is there a group discount?</p>
       </div>
     </div>
-    <div className="headerimage3">
-      <h3 className="hi3div1 regularfont">OUR WHY</h3>
-      <p className="hi3div2">
+    <div className="faqquadrantthreeandfour" id="alignleft">
+      <h3 className="regularfont" id="nomargin">OUR WHY</h3>
+      <p>
         At Here I am Conference, we've implemented a low-cost initiative to
         ensure that everyone, regardless of their financial situation, can
         participate and experience the transformative power of Jesus. We
@@ -77,26 +77,27 @@ const handleButtonClick = () => {
 
 const GuestSpeakers = () => (
   <div className="regularfontguest">
-    {['GUEST SPEAKER 1', 'GUEST SPEAKER 2', 'GUEST SPEAKER 3'].map((speaker, index) => (
-      <div key={index} className={index % 2 === 0 ? "speakerdivodd" : "speakerdiveven"}>
-        <div className={index % 2 === 0 ? "trapezoid1" : "trapezoid2"}></div>
-        <div className="speakername">{speaker}</div>
-      </div>
-    ))}
+    {["GUEST SPEAKER 1", "GUEST SPEAKER 2", "GUEST SPEAKER 3"].map(
+      (speaker, index) => (
+        <div
+          key={index}
+          className={index % 2 === 0 ? "speakerdivodd" : "speakerdiveven"}
+        >
+          <div className={index % 2 === 0 ? "trapezoid1" : "trapezoid2"}></div>
+          <div className="speakername">{speaker}</div>
+        </div>
+      )
+    )}
   </div>
 );
 
 function HIAHomePage() {
   return (
     <div>
-      <div className="headerbackground">
-        <HeaderVideo />
-      </div>
-      <div className="section2bg">
-        <div className="section2container">
-          <HeaderText />
-          <FAQSection />
-        </div>
+      <HeaderVideo />
+      <div className="subheadercontainer">
+        <RegisterSection />
+        <FAQSection />
       </div>
       <div className="datediv regularfont">
         <p>DATES AND TIMES HERE</p>
