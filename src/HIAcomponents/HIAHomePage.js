@@ -3,16 +3,19 @@ import { Link } from "react-router-dom";
 import videoSrc from "../images/MessagesApk-2025-01-11-11-15-15-4.mp4";
 
 const HeaderVideo = () => (
-  <video className="videocontainer" autoPlay loop muted>
-    <source src={videoSrc} type="video/mp4" />
-  </video>
+  <div className="videocontainer">
+    <video autoPlay loop muted>
+      <source src={videoSrc} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 );
 
 const RegisterSection = () => (
   <div className="registersection subheaderfont">
     <div className="registrationquadrantone" id="alignleft">
       <p>
-        Join us for an incredible week encountering God’s presence. This event
+        Join us for an incredible week encountering God's presence. This event
         is ticketed to enter and registration is required. You only pay a
         one-time fee for the whole week!
       </p>
@@ -21,7 +24,9 @@ const RegisterSection = () => (
       <ActionButton to="/" text="REGISTER" />
     </div>
     <div className="registrationquadrantthreeandfour" id="alignright">
-      <h3 className="regularfont" id="nomargin">LOW COST INITIATIVE</h3>
+      <h3 className="regularfont" id="nomargin">
+        LOW COST INITIATIVE
+      </h3>
       <p>
         At Here I am Conference, we've implemented a low-cost initiative to
         ensure that everyone, regardless of their financial situation, can
@@ -49,15 +54,15 @@ const FAQSection = () => (
       </div>
     </div>
     <div className="faqquadrantthreeandfour" id="alignleft">
-      <h3 className="regularfont" id="nomargin">OUR WHY</h3>
+      <h3 className="regularfont" id="nomargin">
+        OUR WHY
+      </h3>
       <p>
-        At Here I am Conference, we've implemented a low-cost initiative to
-        ensure that everyone, regardless of their financial situation, can
-        participate and experience the transformative power of Jesus. We
-        understand that many young people may face financial barriers that
-        prevent them from attending events like ours. Therefore, we have taken
-        deliberate steps to keep our conference affordable without compromising
-        on quality or impact.
+        We are about honoring God, obeying His call, and experiencing the
+        fullness of life found in Him. We come together annually, not out of
+        tradition, but out of a burning passion to draw near to the heart of
+        God, to be transformed by His presence. This week is more than just a
+        gathering; it’s an encounter with Jesus.
       </p>
     </div>
   </div>
@@ -90,6 +95,7 @@ const GuestSpeakers = () => (
     )}
   </div>
 );
+
 
 function HIAHomePage() {
   return (
