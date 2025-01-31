@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import videoSrc from "../images/MessagesApk-2025-01-11-11-15-15-4.mp4";
+import "../styles/HIAHomePage.css";
 
 const HeaderVideo = () => (
   <div className="videocontainer">
