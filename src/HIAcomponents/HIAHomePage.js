@@ -47,11 +47,11 @@ const FAQSection = () => (
       <ActionButton to="/" text="FAQ" />
     </div>
     <div className="faqquadranttwo">
-      <div className="faqquestions">
-        <p>What time does the conference start?</p>
-        <p>Will you live stream?</p>
-        <p>Can I pay at the door?</p>
-        <p>Is there a group discount?</p>
+      <div className="faqquestions" id="nomargin">
+        <p id="nomargin">What time does the conference start?</p>
+        <p id="nomargin">Will you live stream?</p>
+        <p id="nomargin">Can I pay at the door?</p>
+        <p id="nomargin">Is there a group discount?</p>
       </div>
     </div>
     <div className="faqquadrantthreeandfour" id="alignleft">
@@ -63,7 +63,7 @@ const FAQSection = () => (
         fullness of life found in Him. We come together annually, not out of
         tradition, but out of a burning passion to draw near to the heart of
         God, to be transformed by His presence. This week is more than just a
-        gathering; it’s an encounter with Jesus.
+        gathering; it's an encounter with Jesus.
       </p>
     </div>
   </div>
@@ -108,7 +108,8 @@ const GuestSpeakers = () => {
   }, []);
 
   return (
-    <div className="regularfontguest">
+    <div className="guestcontainer">
+      <div className="regularfontguest">
       {["GUEST SPEAKER 1", "GUEST SPEAKER 2", "GUEST SPEAKER 3"].map(
         (speaker, index) => (
           <div
@@ -126,9 +127,16 @@ const GuestSpeakers = () => {
         )
       )}
     </div>
+    </div>
+    
   );
 };
 
+const MerchSection = () => (
+  <div className="merchsection subheaderfont">
+    <h1>MERCH GOES HERE</h1>
+  </div>
+);
 
 function HIAHomePage() {
   return (
@@ -142,6 +150,7 @@ function HIAHomePage() {
         <p>DATES AND TIMES HERE</p>
       </div>
       <GuestSpeakers />
+      <MerchSection />
     </div>
   );
 }
