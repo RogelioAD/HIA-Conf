@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import videoSrc from "../images/MessagesApk-2025-01-11-11-15-15-4.mp4";
 import "../styles/HIAHomePage.css";
@@ -81,21 +81,53 @@ const handleButtonClick = () => {
   console.log("Button was clicked!");
 };
 
-const GuestSpeakers = () => (
-  <div className="regularfontguest">
-    {["GUEST SPEAKER 1", "GUEST SPEAKER 2", "GUEST SPEAKER 3"].map(
-      (speaker, index) => (
-        <div
-          key={index}
-          className={index % 2 === 0 ? "speakerdivodd" : "speakerdiveven"}
-        >
-          <div className={index % 2 === 0 ? "trapezoid1" : "trapezoid2"}></div>
-          <div className="speakername">{speaker}</div>
-        </div>
-      )
-    )}
-  </div>
-);
+const GuestSpeakers = () => {
+  const speakerRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    speakerRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      speakerRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
+  return (
+    <div className="regularfontguest">
+      {["GUEST SPEAKER 1", "GUEST SPEAKER 2", "GUEST SPEAKER 3"].map(
+        (speaker, index) => (
+          <div
+            key={index}
+            className={index % 2 === 0 ? "speakerdivodd" : "speakerdiveven"}
+          >
+            <div className={index % 2 === 0 ? "trapezoid1" : "trapezoid2"}></div>
+            <div
+              className="speakername"
+              ref={(el) => (speakerRefs.current[index] = el)}
+            >
+              {speaker}
+            </div>
+          </div>
+        )
+      )}
+    </div>
+  );
+};
 
 
 function HIAHomePage() {
