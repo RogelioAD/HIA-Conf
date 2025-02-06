@@ -110,47 +110,142 @@ const GuestSpeakers = () => {
   return (
     <div className="guestcontainer">
       <div className="regularfontguest">
-      {["GUEST SPEAKER 1", "GUEST SPEAKER 2", "GUEST SPEAKER 3"].map(
-        (speaker, index) => (
-          <div
-            key={index}
-            className={index % 2 === 0 ? "speakerdivodd" : "speakerdiveven"}
-          >
-            <div className={index % 2 === 0 ? "trapezoid1" : "trapezoid2"}></div>
+        {["GUEST SPEAKER 1", "GUEST SPEAKER 2", "GUEST SPEAKER 3"].map(
+          (speaker, index) => (
             <div
-              className="speakername"
-              ref={(el) => (speakerRefs.current[index] = el)}
+              key={index}
+              className={index % 2 === 0 ? "speakerdivodd" : "speakerdiveven"}
             >
-              {speaker}
+              <div
+                className={index % 2 === 0 ? "trapezoid1" : "trapezoid2"}
+              ></div>
+              <div
+                className="speakername"
+                ref={(el) => (speakerRefs.current[index] = el)}
+              >
+                {speaker}
+              </div>
             </div>
-          </div>
-        )
-      )}
+          )
+        )}
+      </div>
     </div>
-    </div>
-    
   );
 };
 
 const MerchSection = () => (
   <div className="merchsection subheaderfont">
-    <h1>MERCH GOES HERE</h1>
+    <div className="merchsectionleft">
+      <h1>MERCH GOES HERE</h1>
+    </div>
+    <div className="merchsectionright">
+      <h1>BUTTON HERE</h1>
+    </div>
   </div>
 );
+
+const FooterSection = () => (
+  <div className="footersection subheaderfont">
+    <h1>FOOTER GOES HERE</h1>
+  </div>
+);
+
+//this block of code is for subheading container
+const SubHeader = () => (
+  <div className="subheadercontainer">
+    <RegisterSection />
+    <FAQSection />
+  </div>
+);
+
+function listDiv() {
+  const OurWhyMenu = () => (
+    <Link className="nodecoration" to={"/ourwhy"}>
+      <div className="listDiv">
+        <div className="regularfont leftsidelistdiv" id="alignleft">
+          <p>OUR WHY</p>
+        </div>
+        <div className="regularfont rightsidelistdiv" id="alignright">
+          <p>words here</p>
+        </div>
+      </div>
+    </Link>
+  );
+
+  const RegisterMenu = () => (
+    <Link className="nodecoration" to={"/register"}>
+      <div className="listDiv">
+        <div className="regularfont leftsidelistdiv" id="alignleft">
+          <p>REGISTER</p>
+        </div>
+        <div className="regularfont rightsidelistdiv" id="alignright">
+          <p>words here</p>
+        </div>
+      </div>
+    </Link>
+  );
+
+  const MerchMenu = () => (
+    <Link className="nodecoration" to={"/merch"}>
+      <div className="listDiv">
+        <div className="regularfont leftsidelistdiv" id="alignleft">
+          <p>MERCH</p>
+        </div>
+        <div className="regularfont rightsidelistdiv" id="alignright">
+          <p>words here</p>
+        </div>
+      </div>
+    </Link>
+  );
+
+  const FAQ = () => (
+    <Link className="nodecoration" to={"/faq"}>
+      <div className="listDiv">
+        <div className="regularfont leftsidelistdiv" id="alignleft">
+          <p>FAQ</p>
+        </div>
+        <div className="regularfont rightsidelistdiv" id="alignright">
+          <p>words here</p>
+        </div>
+      </div>
+    </Link>
+  );
+
+  const GuestSpeakersMenu = () => (
+    <Link className="nodecoration" to={"/speaker"}>
+      <div className="listDivBottom">
+        <div className="regularfont leftsidelistdiv" id="alignleft">
+          <p>GUEST SPEAKERS</p>
+        </div>
+        <div className="regularfont rightsidelistdiv" id="alignright">
+          <p>words here</p>
+        </div>
+      </div>
+    </Link>
+  );
+
+  return (
+    <div>
+      <OurWhyMenu />
+      <RegisterMenu />
+      <MerchMenu />
+      <FAQ />
+      <GuestSpeakersMenu />
+    </div>
+  );
+}
 
 function HIAHomePage() {
   return (
     <div>
       <HeaderVideo />
-      <div className="subheadercontainer">
-        <RegisterSection />
-        <FAQSection />
-      </div>
       <div className="datediv regularfont">
         <p>DATES AND TIMES HERE</p>
       </div>
       <GuestSpeakers />
+      {listDiv()}
       <MerchSection />
+      <FooterSection />
     </div>
   );
 }
