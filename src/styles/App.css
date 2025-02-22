@@ -1,0 +1,73 @@
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 5%;
+  }
+  
+  .main-content {
+    flex: 1;
+  }
+  
+  .footersection {
+    margin-top: auto;
+  }
+  
+/* ========= Navigation ========= */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    height: 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  
+  .navbaroptions {
+    font-family: var(--font-stack);
+    font-weight: bold;
+    font-size: 75%;
+    text-align: justify;
+  }
+  
+  .navbaroptions.navbarlogo {
+    margin-right: 20em;
+  }
+  
+  .navbarlink {
+    text-decoration: none;
+    color: inherit;
+    margin-right: 1em;
+  }
+
+  /* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    /* Navigation */
+    .navbar {
+      height: 9%;
+      padding: 0 1em; /* Adjust padding for mobile */
+      margin: 0; /* Remove margin */
+    }
+  
+    .navbaroptions.navbarlogo {
+      margin-right: 1em;
+    }
+  
+    .content-wrapper {
+      padding-top: 19%; /* Adjusted padding for mobile */
+    }
+  }

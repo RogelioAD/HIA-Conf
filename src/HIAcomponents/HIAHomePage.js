@@ -1,4 +1,4 @@
-import { React, useRef, useEffect } from "react";
+import { React, useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import videoSrc from "../images/MessagesApk-2025-01-11-11-15-15-4.mp4";
 import "../styles/HIAHomePage.css";
@@ -83,6 +83,7 @@ const handleButtonClick = () => {
 
 const GuestSpeakers = () => {
   const speakerRefs = useRef([]);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -107,18 +108,38 @@ const GuestSpeakers = () => {
     };
   }, []);
 
+  const speakerClassNames = [
+    "speakerdiv1",
+    "speakerdiv2",
+    "speakerdiv3",
+    "speakerdiv4",
+    "speakerdiv5",
+  ];
+
+  const handleSpeakerClick = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   return (
     <div className="guestcontainer">
       <div className="regularfontguest">
-        {["GUEST SPEAKER 1", "GUEST SPEAKER 2", "GUEST SPEAKER 3"].map(
-          (speaker, index) => (
-            <div
-              key={index}
-              className={index % 2 === 0 ? "speakerdivodd" : "speakerdiveven"}
-            >
-              <div
-                className={index % 2 === 0 ? "trapezoid1" : "trapezoid2"}
-              ></div>
+        {[
+          "JEANNE MAYO",
+          "ABRAHAM ZUNIGA",
+          "CHRIS SCOZ",
+          "AUSTIN MARLER",
+          "HARVEST WORSHIP",
+        ].map((speaker, index) => (
+          <div
+            key={index}
+            className={`speaker-container ${
+              activeIndex === index ? "active" : ""
+            }`}
+            onMouseEnter={() => setActiveIndex(index)}
+            onMouseLeave={() => setActiveIndex(null)}
+            onClick={() => handleSpeakerClick(index)}
+          >
+            <div className={speakerClassNames[index]}>
               <div
                 className="speakername"
                 ref={(el) => (speakerRefs.current[index] = el)}
@@ -126,8 +147,13 @@ const GuestSpeakers = () => {
                 {speaker}
               </div>
             </div>
-          )
-        )}
+            <div
+              className={`speakerdivcontent ${activeIndex === index ? "show" : ""}`}
+            >
+              Additional information about {speaker}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -141,12 +167,6 @@ const MerchSection = () => (
     <div className="merchsectionright">
       <h1>BUTTON HERE</h1>
     </div>
-  </div>
-);
-
-const FooterSection = () => (
-  <div className="footersection subheaderfont">
-    <h1>FOOTER GOES HERE</h1>
   </div>
 );
 
@@ -165,21 +185,24 @@ function listDiv() {
         <div className="regularfont leftsidelistdiv" id="alignleft">
           <p>OUR WHY</p>
         </div>
-        <div className="regularfont rightsidelistdiv" id="alignright">
-          <p>words here</p>
+        <div className="subthinfont rightsidelistdiv" id="alignright">
+          <p>OBEDIENCE | ENCOUNTER | CHRIST</p>
         </div>
       </div>
     </Link>
   );
 
   const RegisterMenu = () => (
-    <Link className="nodecoration" to={"/register"}>
+    <Link
+      className="nodecoration"
+      to={"https://harvestonline.churchcenter.com/registrations/events/2676756"}
+    >
       <div className="listDiv">
         <div className="regularfont leftsidelistdiv" id="alignleft">
           <p>REGISTER</p>
         </div>
-        <div className="regularfont rightsidelistdiv" id="alignright">
-          <p>words here</p>
+        <div className="subthinfont rightsidelistdiv" id="alignright">
+          <p>DON'T WANNA MISS</p>
         </div>
       </div>
     </Link>
@@ -191,8 +214,8 @@ function listDiv() {
         <div className="regularfont leftsidelistdiv" id="alignleft">
           <p>MERCH</p>
         </div>
-        <div className="regularfont rightsidelistdiv" id="alignright">
-          <p>words here</p>
+        <div className="subthinfont rightsidelistdiv" id="alignright">
+          <p>SHIRTS</p>
         </div>
       </div>
     </Link>
@@ -204,8 +227,8 @@ function listDiv() {
         <div className="regularfont leftsidelistdiv" id="alignleft">
           <p>FAQ</p>
         </div>
-        <div className="regularfont rightsidelistdiv" id="alignright">
-          <p>words here</p>
+        <div className="subthinfont rightsidelistdiv" id="alignright">
+          <p>WHAT | WHY | WHERE</p>
         </div>
       </div>
     </Link>
@@ -217,8 +240,8 @@ function listDiv() {
         <div className="regularfont leftsidelistdiv" id="alignleft">
           <p>GUEST SPEAKERS</p>
         </div>
-        <div className="regularfont rightsidelistdiv" id="alignright">
-          <p>words here</p>
+        <div className="subthinfont rightsidelistdiv" id="alignright">
+          <p>LET'S SEE THEM</p>
         </div>
       </div>
     </Link>
@@ -240,12 +263,14 @@ function HIAHomePage() {
     <div>
       <HeaderVideo />
       <div className="datediv regularfont">
-        <p>DATES AND TIMES HERE</p>
+        <p>
+          Harvest Church, Downtown Turlock Campus | 130 3rd St, Turlock, CA
+          95380 | JUNE 15TH - 20TH
+        </p>
       </div>
       <GuestSpeakers />
       {listDiv()}
-      <MerchSection />
-      <FooterSection />
+      {/* <MerchSection /> */}
     </div>
   );
 }

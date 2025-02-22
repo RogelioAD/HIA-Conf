@@ -4,6 +4,7 @@ import HomePage from "./HIAcomponents/HIAHomePage";
 import MerchPage from "./HIAcomponents/MerchPage";
 import GuestSpeakers from "./HIAcomponents/GuestSpeakers";
 import FaqPage from "./HIAcomponents/FaqPage";
+import "./styles/App.css";
 
 function App() {
   const navLinks = [
@@ -12,40 +13,71 @@ function App() {
     { path: "/faq", label: "FAQ" }
   ];
 
-  return (
-    <div>
-      <BrowserRouter>
-        {/* Navigation Bar */}
-        <div className="navbar">
-          {/* Logo */}
-          <div className="navbaroptions navbarlogo">
-            <Link className="navbarlink" to="/">
-              HIA CONF
-            </Link>
-          </div>
-          
-          {/* Navigation Links */}
-          <div className="navbaroptions">
-            <nav>
-              {navLinks.map((link, index) => (
-                <React.Fragment key={link.path}>
-                  <Link className="navbarlink" to={link.path}>
-                    {link.label}
-                  </Link>
-                  {index < navLinks.length - 1 && <span> </span>}
-                </React.Fragment>
-              ))}
-            </nav>
+  const FooterSection = () => (
+    <div className="footersection subheaderfont">
+      <div className="footerContent">
+        <div className="footerLeft">
+          <h3>CONTACT US</h3>
+          <p>Email: info@hiaconf.com</p>
+          <p>Phone: (123) 456-7890</p>
+        </div>
+        <div className="footerCenter">
+          <h3>LOCATION</h3>
+          <p>Harvest Church</p>
+          <p>Downtown Turlock Campus</p>
+          <p>130 3rd St, Turlock, CA 95380</p>
+        </div>
+        <div className="footerRight">
+          <h3>FOLLOW US</h3>
+          <div className="socialLinks">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
           </div>
         </div>
+      </div>
+    </div>
+  );
 
-        {/* Routes */}
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/merch" element={<MerchPage />} />
-          <Route path="/speaker" element={<GuestSpeakers />} />
-          <Route path="/faq" element={<FaqPage />} />
-        </Routes>
+  return (
+    <div className="app-container">
+      <BrowserRouter>
+        <div className="content-wrapper">
+          {/* Navigation Bar */}
+          <div className="navbar">
+            {/* Logo */}
+            <div className="navbaroptions navbarlogo">
+              <Link className="navbarlink" to="/">
+                HIA CONF
+              </Link>
+            </div>
+            
+            {/* Navigation Links */}
+            <div className="navbaroptions">
+              <nav>
+                {navLinks.map((link, index) => (
+                  <React.Fragment key={link.path}>
+                    <Link className="navbarlink" to={link.path}>
+                      {link.label}
+                    </Link>
+                    {index < navLinks.length - 1 && <span> </span>}
+                  </React.Fragment>
+                ))}
+              </nav>
+            </div>
+          </div>
+
+          {/* Routes */}
+          <div className="main-content">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/merch" element={<MerchPage />} />
+              <Route path="/speaker" element={<GuestSpeakers />} />
+              <Route path="/faq" element={<FaqPage />} />
+            </Routes>
+          </div>
+          
+          <FooterSection />
+        </div>
       </BrowserRouter>
     </div>
   );

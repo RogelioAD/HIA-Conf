@@ -31,6 +31,12 @@
   font-size: 80%;
 }
 
+.subthinfont {
+  font-family: var(--font-stack);
+  font-weight: lighter;
+  font-size: 100%;
+}
+
 .subheaderfont {
   font-family: var(--font-stack);
   font-weight: bold;
@@ -40,35 +46,12 @@
 .regularfontguest {
   font-family: var(--font-stack);
   font-weight: bold;
-  font-size: 800%;
+  font-size: 700%;
   letter-spacing: -0.12em;
 }
 
-/* ========= Navigation ========= */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-black);
-  color: var(--color-white);
-  height: 6em;
-}
-
-.navbaroptions {
-  font-family: var(--font-stack);
-  font-weight: bold;
-  font-size: 75%;
-  text-align: justify;
-}
-
-.navbaroptions.navbarlogo {
-  margin-right: 20em;
-}
-
-.navbarlink {
-  text-decoration: none;
-  color: inherit;
-  margin-right: 1em;
+.smaller-font {
+  font-size: 90%; /* Adjust this value as needed */
 }
 
 /* ========= Header Section ========= */
@@ -84,6 +67,8 @@
 }
 
 .videocontainer {
+  margin-top: 0; /* Remove any top margin */
+  padding-top: 0; /* Remove any top padding */
   width: 100%;
   height: 45em;
   position: relative;
@@ -230,17 +215,18 @@
 .listDiv {
   height: 7em;
   background-color: var(--color-white);
+  color: var(--color-black);
   border-top: 4px solid var(--color-black);
   display: flex;
   flex-direction: row;
-  justify-content: space-between; /* Pushes inner divs to opposite sides */
-  align-items: center; /* Vertically centers content */
-  padding: 0 2em; /* Adds space on both sides */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2em;
 }
 
 .listDiv:hover {
-  color: #ffffff;
-  background-color: #000000;
+  color: var(--color-white);
+  background-color: var(--color-black);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -271,7 +257,6 @@
 }
 
 .rightsidelistdiv {
-  font-size: xx-large;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -360,6 +345,7 @@
 
 /* ========= Guest Speaker Section ========= */
 .guestcontainer {
+  padding: 0%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -367,43 +353,123 @@
   background-color: var(--color-primary);
   color: var(--color-cream);
   width: 100%;
-  height: 50em;
+  height: fit-content;
+  background-size: cover; /* Ensure the background image covers the container */
+}
+.speakerdiv1 {
+  background-image: url("../images/austin.png"); /* Replace with actual image path */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center -5em; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  padding: 2%;
+  height: 5em;
+  font-size: 40%; /* Adjust this value as needed for smaller font size */
+  letter-spacing: normal;
+  display: flex; /* Ensure flexbox is enabled */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center; /* Center text */
+  width: 100vw; /* Change to viewport width to ensure full width */
+  max-width: none; /* Remove any max-width restrictions */
+  overflow: hidden; /* Hide overflow if content exceeds the container */
 }
 
-.speakerdivodd,
-.speakerdiveven {
-  position: relative;
-  height: 2em;
-  display: flex;
-  align-items: center;
+.speakerdiv2 {
+  background-image: url("../images/austin.png"); /* Replace with actual image path */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center -5em; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  padding: 2%;
+  height: 5em;
+  font-size: 40%; /* Adjust this value as needed for smaller font size */
+  letter-spacing: normal;
+  display: flex; /* Ensure flexbox is enabled */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center; /* Center text */
+  width: 100vw; /* Change to viewport width to ensure full width */
+  max-width: none; /* Remove any max-width restrictions */
+  overflow: hidden; /* Hide overflow if content exceeds the container */
 }
 
-.speakerdivodd {
-  justify-content: start;
+.speakerdiv3 {
+  background-image: url("../images/CHRIS.png"); /* Replace with actual image path */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center -6em; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  padding: 2%;
+  height: 5em;
+  font-size: 40%; /* Adjust this value as needed for smaller font size */
+  letter-spacing: normal;
+  display: flex; /* Ensure flexbox is enabled */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center; /* Center text */
+  width: 100vw; /* Change to viewport width to ensure full width */
+  max-width: none; /* Remove any max-width restrictions */
+  overflow: hidden; /* Hide overflow if content exceeds the container */
 }
-.speakerdiveven {
-  justify-content: end;
+
+.speakerdiv4 {
+  background-image: url("../images/austin.png"); /* Replace with actual image path */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center -5em; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  padding: 2%;
+  height: 5em;
+  font-size: 40%; /* Adjust this value as needed for smaller font size */
+  letter-spacing: normal;
+  display: flex; /* Ensure flexbox is enabled */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center; /* Center text */
+  width: 100vw; /* Change to viewport width to ensure full width */
+  max-width: none; /* Remove any max-width restrictions */
+  overflow: hidden; /* Hide overflow if content exceeds the container */
+}
+
+.speakerdiv5 {
+  background-image: url("../images/austin.png"); /* Replace with actual image path */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center -5em; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  padding: 2%;
+  height: 5em;
+  font-size: 40%; /* Adjust this value as needed for smaller font size */
+  letter-spacing: normal;
+  display: flex; /* Ensure flexbox is enabled */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center; /* Center text */
+  width: 100vw; /* Change to viewport width to ensure full width */
+  max-width: none; /* Remove any max-width restrictions */
+  overflow: hidden; /* Hide overflow if content exceeds the container */
+}
+
+/* Add this CSS to your styles (HIAHomePage.css) */
+.speakerdivcontent {
+  display: none; /* Hide by default */
+  font-family: var(--font-stack);
+  font-weight:lighter;
+  font-size: 40%;
+  letter-spacing: -0.1em;
+  text-transform: uppercase; /* Added to make font always capital */
+  text-align: center;
+}
+
+.speakerdivcontent.show {
+  display: block; /* Show when the 'show' class is added */
+}
+
+.speaker-container:hover .speakerdivcontent,
+.speaker-container.active .speakerdivcontent {
+  display: block; /* Show on hover or when active */
+  background: #da4527;
+  height: fit-content;
 }
 
 .speakername {
   margin-inline: 0.3em;
-}
-
-.trapezoid1,
-.trapezoid2 {
-  position: absolute;
-  width: 80%;
-  height: 100%;
-  background-color: var(--color-secondary);
-  z-index: -1;
-}
-
-.trapezoid1 {
-  clip-path: polygon(0% 0%, 50% 0%, 100% 100%, 0% 100%);
-}
-
-.trapezoid2 {
-  clip-path: polygon(100% 0%, 50% 0%, 0% 100%, 100% 100%);
 }
 
 .speakername {
@@ -452,13 +518,359 @@
 
 /* ========= Footer Section ========= */
 .footersection {
-  height: 100%;
+  flex-shrink: 0;
+  width: 100%;
+  padding: 3em 2em;
   background-color: var(--color-black);
   color: var(--color-cream);
-  width: 100%;
-  height: 10em;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* Changed from space-around for better spacing */
+  gap: 2em; /* Added gap between sections */
+}
+
+.footerLeft,
+.footerCenter,
+.footerRight {
+  flex: 1;
+}
+
+.footerContent h3 {
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+
+.footerContent p {
+  margin: 0.5em 0;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.socialLinks {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  gap: 0.8em;
+}
+
+.socialLinks a {
+  color: var(--color-cream);
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.socialLinks a:hover {
+  color: var(--color-primary);
+  transition: color 0.3s ease;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .footersection {
+    padding: 2em 1em; /* Adjust padding for mobile */
+    min-height: 35em; /* Ensure there's a minimum height for the footer */
+  }
+
+  .footerContent {
+    flex-direction: column;
+    gap: 2.5em;
+  }
+
+  .footerLeft,
+  .footerCenter,
+  .footerRight {
+    text-align: center;
+    width: 100%;
+  }
+
+  .footerContent h3 {
+    font-size: 1.1em;
+    margin-bottom: 0.8em;
+  }
+
+  .footerContent p {
+    font-size: 0.85em;
+  }
+
+  .socialLinks {
+    align-items: center;
+    gap: 0.6em;
+  }
+
+
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+  .footersection {
+    padding: 1.5em 0.8em;
+  }
+
+  .footerContent {
+    gap: 2em;
+  }
+
+  .footerContent h3 {
+    font-size: 1em;
+  }
+
+  .footerContent p {
+    font-size: 0.8em;
+  }
+}
+
+/* tablet */
+@media screen and (max-width: 770px) {
+  /* Header Video */
+  .header {
+    height: 20em; /* Adjusted height for mobile */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+  }
+
+  .videocontainer {
+    height: 20em; /* Adjusted height for mobile */
+    width: 100%; /* Ensures full width on mobile */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+  }
+
+  .videocontainer video {
+    width: 100%; /* Ensures video fits the container */
+    height: auto; /* Maintains aspect ratio */
+  }
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  /* Header Video */
+  .header {
+    height: 20em; /* Adjusted height for mobile */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+  }
+
+  .videocontainer {
+    height: 11em; /* Adjusted height for mobile */
+    width: 100%; /* Ensures full width on mobile */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+  }
+
+  .videocontainer video {
+    width: 100%; /* Ensures video fits the container */
+    height: auto; /* Maintains aspect ratio */
+  }
+
+  /* Date Section */
+  .datediv {
+    padding: 1em;
+  }
+
+  .datediv p {
+    font-size: 80%;
+    text-align: center;
+  }
+
+  /* Guest Speakers */
+  .regularfontguest {
+    font-size: 400%;
+  }
+
+  /* List Sections */
+  .listDiv,
+  .listDivBottom {
+    height: 5em;
+    padding: 0 1em;
+  }
+
+  .leftsidelistdiv {
+    margin-left: 1em;
+    font-size: large;
+  }
+
+  .rightsidelistdiv {
+    margin-right: 1em;
+    font-size: small;
+  }
+
+  /* Register and FAQ sections */
+  .subheadercontainer {
+    flex-direction: column;
+  }
+
+  .registersection,
+  .faqsection {
+    width: 100%;
+    padding: 2em 1em;
+  }
+
+  .registrationquadrantone,
+  .registrationquadranttwo,
+  .registrationquadrantthreeandfour {
+    width: 100%;
+    text-align: center;
+  }
+
+  .faqquadrantone,
+  .faqquadranttwo,
+  .faqquadrantthreeandfour {
+    width: 100%;
+    text-align: center;
+  }
+
+  .speakerdiv1 {
+    background-image: url("../images/austin.png"); /* Replace with actual image path */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center -5em; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    padding: 2%;
+    height: 8em;
+    font-size: 40%; /* Adjust this value as needed for smaller font size */
+    letter-spacing: normal;
+    display: flex; /* Ensure flexbox is enabled */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Center text */
+    width: 100vw; /* Change to viewport width to ensure full width */
+    max-width: none; /* Remove any max-width restrictions */
+    overflow: hidden; /* Hide overflow if content exceeds the container */
+  }
+
+  .speakerdiv2 {
+    background-image: url("../images/austin.png"); /* Replace with actual image path */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center -5em; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    padding: 2%;
+    height: 8em;
+    font-size: 40%; /* Adjust this value as needed for smaller font size */
+    letter-spacing: normal;
+    display: flex; /* Ensure flexbox is enabled */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Center text */
+    width: 100vw; /* Change to viewport width to ensure full width */
+    max-width: none; /* Remove any max-width restrictions */
+    overflow: hidden; /* Hide overflow if content exceeds the container */
+  }
+
+  .speakerdiv3 {
+    background-image: url("../images/CHRIS.png"); /* Replace with actual image path */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center -2.5em; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    padding: 2%;
+    height: 8em;
+    font-size: 40%; /* Adjust this value as needed for smaller font size */
+    letter-spacing: normal;
+    display: flex; /* Ensure flexbox is enabled */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Center text */
+    width: 100vw; /* Change to viewport width to ensure full width */
+    max-width: none; /* Remove any max-width restrictions */
+    overflow: hidden; /* Hide overflow if content exceeds the container */
+  }
+
+  .speakerdiv5 {
+    background-image: url("../images/austin.png"); /* Replace with actual image path */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center -5em; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    padding: 2%;
+    height: 8em;
+    font-size: 40%; /* Adjust this value as needed for smaller font size */
+    letter-spacing: normal;
+    display: flex; /* Ensure flexbox is enabled */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Center text */
+    width: 100vw; /* Change to viewport width to ensure full width */
+    max-width: none; /* Remove any max-width restrictions */
+    overflow: hidden; /* Hide overflow if content exceeds the container */
+  }
+
+  .speakerdiv4 {
+    background-image: url("../images/austin.png"); /* Replace with actual image path */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center -1.6em; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    padding: 2%;
+    margin-left: 0px;
+    height: 8em;
+    font-size: 40%; /* Adjust this value as needed for smaller font size */
+    letter-spacing: normal;
+    display: flex; /* Ensure flexbox is enabled */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Center text */
+    max-width: 100vw; /* Prevent content from falling out of the screen */
+    overflow: hidden; /* Hide overflow if content exceeds the container */
+  }
+
+  .speaker-container:hover .speakerdivcontent,
+  .speaker-container.active .speakerdivcontent {
+    display: block; /* Show on hover or when active */
+  }
+
+  .speakerdivcontent {
+    padding: 2%;
+    height: 8em;
+    font-size: 40%; /* Adjust this value as needed for smaller font size */
+    letter-spacing: -2px;
+    text-transform: uppercase; /* Added to make font always capital */
+    text-align: center;
+  }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+  .regularfontguest {
+    width: 100%;
+    font-size: 300%;
+  }
+
+  .leftsidelistdiv {
+    margin-left: 0.5em;
+    font-size: medium;
+  }
+
+  .rightsidelistdiv {
+    margin-right: 0.5em;
+    font-size: x-small;
+  }
+
+  .datediv p {
+    font-size: 70%;
+  }
+
+  .buttonblack,
+  .buttonwhite {
+    width: 8em;
+    height: 3em;
+    font-size: 14px;
+  }
+}
+
+/* Update the app container and content wrapper styles */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
