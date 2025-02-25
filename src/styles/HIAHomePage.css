@@ -44,6 +44,7 @@
 }
 
 .regularfontguest {
+  color: #faf0ca;
   font-family: var(--font-stack);
   font-weight: bold;
   font-size: 700%;
@@ -344,6 +345,7 @@
 }
 
 /* ========= Guest Speaker Section ========= */
+
 .guestcontainer {
   padding: 0%;
   display: flex;
@@ -356,10 +358,57 @@
   height: fit-content;
   background-size: cover; /* Ensure the background image covers the container */
 }
-.speakerdiv1 {
-  background-image: url("../images/austin.png"); /* Replace with actual image path */
+.speakerdiv1,
+.speakerdiv2,
+.speakerdiv3,
+.speakerdiv4,
+.speakerdiv5 {
+  position: relative; /* Ensure positioning for the overlay */
+  background-image: url("../images/jeanne.png"); /* Replace with actual image path */
   background-size: cover; /* Ensures the image covers the entire area */
-  background-position: center -5em; /* Centers the image */
+  background-position: center -3em; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  padding: 2%;
+  height: 5em;
+  font-size: 40%; /* Adjust this value as needed for smaller font size */
+  letter-spacing: normal;
+  display: flex; /* Ensure flexbox is enabled */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center; /* Center text */
+  width: 100vw; /* Change to viewport width to ensure full width */
+  max-width: none; /* Remove any max-width restrictions */
+  overflow: hidden; /* Hide overflow if content exceeds the container */
+}
+
+.speakerdiv1::before,
+.speakerdiv2::before,
+.speakerdiv3::before,
+.speakerdiv4::before,
+.speakerdiv5::before {
+  content: ""; /* Required for pseudo-element */
+  position: absolute; /* Position it absolutely within the parent */
+  top: 0; /* Cover the entire area */
+  left: 0; /* Cover the entire area */
+  right: 0; /* Cover the entire area */
+  bottom: 0; /* Cover the entire area */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
+  z-index: 1; /* Ensure it sits above the background image */
+}
+
+.speakerdiv1 > *,
+.speakerdiv2 > *,
+.speakerdiv3 > *,
+.speakerdiv4 > *,
+.speakerdiv5 > * {
+  position: relative; /* Ensure child elements are above the overlay */
+  z-index: 2; /* Ensure content is above the overlay */
+}
+
+.speakerdiv1 {
+  background-image: url("../images/jeanne.png"); /* Replace with actual image path */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center -3em; /* Centers the image */
   background-repeat: no-repeat; /* Prevents the image from repeating */
   padding: 2%;
   height: 5em;
@@ -375,7 +424,7 @@
 }
 
 .speakerdiv2 {
-  background-image: url("../images/austin.png"); /* Replace with actual image path */
+  background-image: url("../images/abe.png"); /* Replace with actual image path */
   background-size: cover; /* Ensures the image covers the entire area */
   background-position: center -5em; /* Centers the image */
   background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -429,7 +478,7 @@
 }
 
 .speakerdiv5 {
-  background-image: url("../images/austin.png"); /* Replace with actual image path */
+  background-image: url("../images/worshipSec.png"); /* Replace with actual image path */
   background-size: cover; /* Ensures the image covers the entire area */
   background-position: center -5em; /* Centers the image */
   background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -721,11 +770,12 @@
     width: 100%;
     text-align: center;
   }
+ 
 
   .speakerdiv1 {
-    background-image: url("../images/austin.png"); /* Replace with actual image path */
-    background-size: cover; /* Ensures the image covers the entire area */
-    background-position: center -5em; /* Centers the image */
+    background-image: url("../images/jeanne.png"); /* Replace with actual image path */
+    background-size: fill; /* Ensures the image covers the entire area */
+    background-position: center -1em; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     padding: 2%;
     height: 8em;
@@ -741,9 +791,9 @@
   }
 
   .speakerdiv2 {
-    background-image: url("../images/austin.png"); /* Replace with actual image path */
+    background-image: url("../images/abe.png"); /* Replace with actual image path */
     background-size: cover; /* Ensures the image covers the entire area */
-    background-position: center -5em; /* Centers the image */
+    background-position: center -2em; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     padding: 2%;
     height: 8em;
@@ -777,7 +827,7 @@
   }
 
   .speakerdiv5 {
-    background-image: url("../images/austin.png"); /* Replace with actual image path */
+    background-image: url("../images/worshipSec.png"); /* Replace with actual image path */
     background-size: cover; /* Ensures the image covers the entire area */
     background-position: center -5em; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */

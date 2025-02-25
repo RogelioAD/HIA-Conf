@@ -234,18 +234,18 @@ function listDiv() {
     </Link>
   );
 
-  const GuestSpeakersMenu = () => (
-    <Link className="nodecoration" to={"/speaker"}>
-      <div className="listDivBottom">
-        <div className="regularfont leftsidelistdiv" id="alignleft">
-          <p>GUEST SPEAKERS</p>
-        </div>
-        <div className="subthinfont rightsidelistdiv" id="alignright">
-          <p>LET'S SEE THEM</p>
-        </div>
-      </div>
-    </Link>
-  );
+  // const GuestSpeakersMenu = () => (
+  //   <Link className="nodecoration" to={"/speaker"}>
+  //     <div className="listDivBottom">
+  //       <div className="regularfont leftsidelistdiv" id="alignleft">
+  //         <p>GUEST SPEAKERS</p>
+  //       </div>
+  //       <div className="subthinfont rightsidelistdiv" id="alignright">
+  //         <p>LET'S SEE THEM</p>
+  //       </div>
+  //     </div>
+  //   </Link>
+  // );
 
   return (
     <div>
@@ -253,7 +253,6 @@ function listDiv() {
       <RegisterMenu />
       <MerchMenu />
       <FAQ />
-      <GuestSpeakersMenu />
     </div>
   );
 }

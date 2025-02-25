@@ -9,7 +9,7 @@ import "./styles/App.css";
 function App() {
   const navLinks = [
     { path: "/merch", label: "MERCH" },
-    { path: "/speaker", label: "GUEST SPEAKERS" },
+    { path: "https://harvestonline.churchcenter.com/registrations/events/2676756", label: "REGISTER" },
     { path: "/faq", label: "FAQ" }
   ];
 

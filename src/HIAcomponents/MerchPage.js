@@ -1,10 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import "../styles/MerchPage.css";
+function MerchPage(){
 
-const MerchPage = () => (
-  <div className="merchpage">
-    <h1>Merch</h1>
-  </div>
-);
+  return (
+    <div className="merchPage">
+      <div className="bigFont">
+        COME BACK SOON
+      </div>
+      <div>
+        <img src={require("../images/basketball.png")} alt="Basketball" />
+      </div>
+    </div>
+  )
+}
 
 export default MerchPage;
