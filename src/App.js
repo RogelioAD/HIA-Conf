@@ -18,8 +18,7 @@ function App() {
       <div className="footerContent">
         <div className="footerLeft">
           <h3>CONTACT US</h3>
-          <p>Email: info@hiaconf.com</p>
-          <p>Phone: (123) 456-7890</p>
+          <p>Email: amarler@harvestonline.church</p>
         </div>
         <div className="footerCenter">
           <h3>LOCATION</h3>
@@ -30,8 +29,8 @@ function App() {
         <div className="footerRight">
           <h3>FOLLOW US</h3>
           <div className="socialLinks">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.instagram.com/harvestyouth.church/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.facebook.com/harvestonline.church/" target="_blank" rel="noopener noreferrer">Facebook</a>
           </div>
         </div>
       </div>

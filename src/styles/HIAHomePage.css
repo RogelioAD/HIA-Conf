@@ -28,19 +28,19 @@
 .thinfont {
   font-family: var(--font-stack);
   font-weight: lighter;
-  font-size: 80%;
+  font-size: 100%;
 }
 
 .subthinfont {
   font-family: var(--font-stack);
   font-weight: lighter;
-  font-size: 100%;
+  font-size: 20%;
 }
 
 .subheaderfont {
   font-family: var(--font-stack);
   font-weight: bold;
-  font-size: 100%;
+  font-size: 16px;
 }
 
 .regularfontguest {
@@ -90,23 +90,13 @@
   object-fit: cover;
 }
 
-/* ========= Section 2 Layout ========= */
-.subheadercontainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  background-color: var(--color-white);
-  width: 100%;
-  height: 26em;
-}
 
 /* Header Text Sections */
 .registersection {
   height: 100%;
   background-color: var(--color-primary);
   color: var(--color-cream);
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -163,36 +153,47 @@
 
 /* Header Image Section */
 .faqsection {
-  background-image: url("../images/worship.png");
+  position: relative; /* Ensure positioning for the overlay */
+  background-image: url("../images/subheader.png");
   background-size: cover;
   background-position: center;
   height: 100%;
   background-color: var(--color-primary);
   color: var(--color-cream);
-  width: 50%;
+  width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   padding: 20px;
   box-sizing: border-box;
+  font-size: 20px;
+  text-align: center;
 }
 
-.faqquadrantone {
-  height: 50%;
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.faqsection::before {
+  content: ""; /* Required for pseudo-element */
+  position: absolute; /* Position it absolutely within the parent */
+  top: 0; /* Cover the entire area */
+  left: 0; /* Cover the entire area */
+  right: 0; /* Cover the entire area */
+  bottom: 0; /* Cover the entire area */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
+  z-index: 1; /* Ensure it sits above the background image */
 }
 
-.faqquadranttwo {
-  height: 50%;
-  width: 50%;
+.faqsection > * {
+  position: relative; /* Ensure child elements are above the overlay */
+  z-index: 2; /* Ensure content is above the overlay */
 }
 
-.faqquadrantthreeandfour {
-  height: 50%;
-  width: 90%;
+.subsection {
+  background-color: #da4527;
+  display: flex; /* Added to enable flexbox */
+  flex-direction: column; /* Stack items vertically */
+  padding: 1em; /* Add padding for better spacing */
+  text-align: center; /* Center text for better readability */
+  height: 10em;
+  color: #faf0ca;
 }
 
 .headerimage4 {
@@ -499,7 +500,7 @@
 .speakerdivcontent {
   display: none; /* Hide by default */
   font-family: var(--font-stack);
-  font-weight:lighter;
+  font-weight: lighter;
   font-size: 40%;
   letter-spacing: -0.1em;
   text-transform: uppercase; /* Added to make font always capital */
@@ -648,8 +649,6 @@
     align-items: center;
     gap: 0.6em;
   }
-
-
 }
 
 /* Small Mobile Devices */
@@ -770,7 +769,6 @@
     width: 100%;
     text-align: center;
   }
- 
 
   .speakerdiv1 {
     background-image: url("../images/jeanne.png"); /* Replace with actual image path */
@@ -924,3 +922,26 @@
   display: flex;
   flex-direction: column;
 }
+
+/* Mobile Styles for FAQ Section */
+@media screen and (max-width: 768px) {
+  .faqsection {
+    flex-direction: column; /* Stack items vertically */
+    padding: 2em 1em 1em 1em; /* Add padding for better spacing */
+    text-align: center; /* Center text for better readability */
+    height: 11em;
+    font-size: 10px;
+    text-align: center;
+  }
+
+  .subsection {
+    flex-direction: column; /* Stack items vertically */
+    padding: 1em; /* Add padding for better spacing */
+    text-align: center; /* Center text for better readability */
+    height: 14em;
+    font-size: 10px;
+    text-align: center;
+  }
+}
+
+

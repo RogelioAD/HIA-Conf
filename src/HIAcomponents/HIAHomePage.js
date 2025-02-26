@@ -13,73 +13,36 @@ const HeaderVideo = () => (
 );
 
 const RegisterSection = () => (
-  <div className="registersection subheaderfont">
-    <div className="registrationquadrantone" id="alignleft">
-      <p>
-        Join us for an incredible week encountering God's presence. This event
-        is ticketed to enter and registration is required. You only pay a
-        one-time fee for the whole week!
-      </p>
-    </div>
-    <div className="registrationquadranttwo" id="alignright">
-      <ActionButton to="/" text="REGISTER" />
-    </div>
-    <div className="registrationquadrantthreeandfour" id="alignright">
-      <h3 className="regularfont" id="nomargin">
-        LOW COST INITIATIVE
-      </h3>
-      <p>
-        At Here I am Conference, we've implemented a low-cost initiative to
-        ensure that everyone, regardless of their financial situation, can
-        participate and experience the transformative power of Jesus. We
-        understand that many young people may face financial barriers that
-        prevent them from attending events like ours. Therefore, we have taken
-        deliberate steps to keep our conference affordable without compromising
-        on quality or impact.
-      </p>
-    </div>
+  <div className="subsection">
+    <p>
+      Join us for an incredible week encountering God's presence. This event is
+      ticketed to enter and registration is required. You only pay a one-time
+      fee for the whole week!
+    </p>
+    <p id="nomargin">LOW COST INITIATIVE</p>
+    <p>
+      At Here I am Conference, we've implemented a low-cost initiative to ensure
+      that everyone, regardless of their financial situation, can participate
+      and experience the transformative power of Jesus. We understand that many
+      young people may face financial barriers that prevent them from attending
+      events like ours. Therefore, we have taken deliberate steps to keep our
+      conference affordable without compromising on quality or impact.
+    </p>
   </div>
 );
 
 const FAQSection = () => (
-  <div className="faqsection subheaderfont">
-    <div className="faqquadrantone">
-      <ActionButton to="/" text="FAQ" />
-    </div>
-    <div className="faqquadranttwo">
-      <div className="faqquestions" id="nomargin">
-        <p id="nomargin">What time does the conference start?</p>
-        <p id="nomargin">Will you live stream?</p>
-        <p id="nomargin">Can I pay at the door?</p>
-        <p id="nomargin">Is there a group discount?</p>
-      </div>
-    </div>
-    <div className="faqquadrantthreeandfour" id="alignleft">
-      <h3 className="regularfont" id="nomargin">
-        OUR WHY
-      </h3>
-      <p>
-        We are about honoring God, obeying His call, and experiencing the
-        fullness of life found in Him. We come together annually, not out of
-        tradition, but out of a burning passion to draw near to the heart of
-        God, to be transformed by His presence. This week is more than just a
-        gathering; it's an encounter with Jesus.
-      </p>
-    </div>
+  <div className="faqsection overlay">
+    <p id="nomargin">OUR WHY</p>
+    <p className="thinfont">
+      We are about honoring God, obeying His call, and experiencing the fullness
+      of life found in Him. We come together annually, not out of tradition, but
+      out of a burning passion to draw near to the heart of God, to be
+      transformed by His presence. This week is more than just a gathering; it's
+      an encounter with Jesus.
+    </p>
   </div>
 );
-
-const ActionButton = ({ to, text }) => (
-  <div className="buttonblack">
-    <Link to={to} onClick={handleButtonClick} className="nodecoration">
-      {text}
-    </Link>
-  </div>
-);
-
-const handleButtonClick = () => {
-  console.log("Button was clicked!");
-};
 
 const GuestSpeakers = () => {
   const speakerRefs = useRef([]);
@@ -116,6 +79,14 @@ const GuestSpeakers = () => {
     "speakerdiv5",
   ];
 
+  const speakerClassInfo = [
+    "MONDAY + TUESDAY",
+    "WEDNESDAY",
+    "THURSDAY",
+    "FRIDAY",
+    "EVERYDAY",
+  ];
+
   const handleSpeakerClick = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
@@ -148,9 +119,11 @@ const GuestSpeakers = () => {
               </div>
             </div>
             <div
-              className={`speakerdivcontent ${activeIndex === index ? "show" : ""}`}
+              className={`speakerdivcontent ${
+                activeIndex === index ? "show" : ""
+              }`}
             >
-              Additional information about {speaker}
+              {speakerClassInfo[index]}
             </div>
           </div>
         ))}
@@ -172,15 +145,19 @@ const MerchSection = () => (
 
 //this block of code is for subheading container
 const SubHeader = () => (
-  <div className="subheadercontainer">
-    <RegisterSection />
+  <div className="subheaderfont">
+    {/* <RegisterSection /> */}
     <FAQSection />
   </div>
 );
 
 function listDiv() {
   const OurWhyMenu = () => (
-    <Link className="nodecoration" to={"/ourwhy"}>
+    <Link
+      className="nodecoration"
+      to={"/"}
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+    >
       <div className="listDiv">
         <div className="regularfont leftsidelistdiv" id="alignleft">
           <p>OUR WHY</p>
@@ -209,7 +186,11 @@ function listDiv() {
   );
 
   const MerchMenu = () => (
-    <Link className="nodecoration" to={"/merch"}>
+    <Link
+      className="nodecoration"
+      to={"/merch"}
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+    >
       <div className="listDiv">
         <div className="regularfont leftsidelistdiv" id="alignleft">
           <p>MERCH</p>
@@ -222,7 +203,11 @@ function listDiv() {
   );
 
   const FAQ = () => (
-    <Link className="nodecoration" to={"/faq"}>
+    <Link
+      className="nodecoration"
+      to={"/faq"}
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+    >
       <div className="listDiv">
         <div className="regularfont leftsidelistdiv" id="alignleft">
           <p>FAQ</p>
@@ -261,10 +246,14 @@ function HIAHomePage() {
   return (
     <div>
       <HeaderVideo />
+      <SubHeader />
       <div className="datediv regularfont">
         <p>
           Harvest Church, Downtown Turlock Campus | 130 3rd St, Turlock, CA
           95380 | JUNE 15TH - 20TH
+        </p>
+        <p className="subthinfont">
+          TAP ON GUEST BELOW TO VIEW WHAT DAYS THEY ARE SPEAKING
         </p>
       </div>
       <GuestSpeakers />
