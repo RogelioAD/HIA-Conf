@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.65849058.css",
+    "main.js": "/static/js/main.f293da57.js",
+    "static/media/MessagesApk-2025-01-11-11-15-15-4.mp4": "/static/media/MessagesApk-2025-01-11-11-15-15-4.db7e3d608edf7fcbfe89.mp4",
+    "static/media/subheader.png": "/static/media/subheader.f1aa42eacf139e0e9245.png",
+    "static/media/jeanne.png": "/static/media/jeanne.225a65ea9792549ec369.png",
+    "static/media/basketball.png": "/static/media/basketball.7fc8010444419682d8c1.png",
+    "static/media/austin.png": "/static/media/austin.c314360861ce8220e009.png",
+    "static/media/CHRIS.png": "/static/media/CHRIS.8b0427ef762df657a72c.png",
+    "static/media/worshipSec.png": "/static/media/worshipSec.fe8454f001bc3a578a6c.png",
+    "static/media/abe.png": "/static/media/abe.f55c532c02cd01e387ef.png",
+    "index.html": "/index.html",
+    "main.65849058.css.map": "/static/css/main.65849058.css.map",
+    "main.f293da57.js.map": "/static/js/main.f293da57.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.65849058.css",
+    "static/js/main.f293da57.js"
+  ]
+}
